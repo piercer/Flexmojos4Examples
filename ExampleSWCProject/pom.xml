@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+	    <groupId>com.dz015.example</groupId>
+	    <artifactId>aggregator-project</artifactId>
+	    <version>1.0</version>
+	</parent>
+
+	<artifactId>dz015-swc-project-1</artifactId>
+	<packaging>swc</packaging>
+
+	<properties>
+		<library.namespace.uri>library://ns.hsbc.com/flex/mx</library.namespace.uri>
+		<library.manifest.file>src/main/flex/manifest.xml</library.manifest.file>
+		<library.design.file>src/main/flex/design.xml</library.design.file>
+		<library.defaults.css>src/main/flex/defaults.css</library.defaults.css>
+	</properties>
+
+</project>
