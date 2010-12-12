@@ -1,0 +1,41 @@
+<settings>
+	
+    <profiles>
+        <profile>
+            <id>standard-extra-repos</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+		   <repositories>
+			      <repository>
+			         <id>flex-mojos-repository</id>
+			         <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+			         <releases>
+			            <enabled>true</enabled>
+			         </releases>
+			         <snapshots>
+			            <enabled>true</enabled>
+			         </snapshots>
+			      </repository>
+			      <repository>
+			         <id>flash-nexus-repository</id>
+			         <url>http://www.flashnexus.org/nexus/content/groups/public</url>
+			      </repository>
+			   </repositories>
+		   <pluginRepositories>
+		      <pluginRepository>
+		         <id>flex-mojos-plugin-repository</id>
+		         <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+		         <releases>
+		            <enabled>true</enabled>
+		         </releases>
+		         <snapshots>
+		            <enabled>false</enabled>
+		         </snapshots>
+		      </pluginRepository>
+		   </pluginRepositories>
+        </profile>
+    </profiles>
+
+
+</settings>
