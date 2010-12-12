@@ -1,6 +1,6 @@
-@namespace dz015 "http://www.dz015.com/ns";
+@namespace dz015 "library://www.dz015.com/ns";
 
-ns:Component1
+dz015|Component1
 {
     skin-class: ClassReference("com.dz015.example.Component1Skin");
 }

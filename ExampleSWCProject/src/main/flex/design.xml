@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <namespaces>
-    <namespace prefix="dz015" uri="http://www.dz015.com/ns"/>
+    <namespace prefix="dz015" uri="library://www.dz015.com/ns"/>
 </namespaces>
