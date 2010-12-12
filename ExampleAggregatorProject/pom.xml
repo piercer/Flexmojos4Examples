@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        >
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dz015.example</groupId>
+    <artifactId>aggregator-project</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>SWCProject1</module>
+        <module>SWCProject2</module>
+        <module>SWFProject</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <flex.sdk.version>4.1.0.16076</flex.sdk.version>
+        <flexmojos.version>4.0-beta-4</flexmojos.version>
+        <flexunit.version>4.1.0-beta3</flexunit.version>
+        <library.namespace.uri>library://ns.hsbc.com/flex/mx</library.namespace.uri>
+        <library.manifest.file>src/main/flex/manifest.xml</library.manifest.file>
+        <library.design.file>src/main/flex/design.xml</library.design.file>
+        <library.defaults.css>src/main/flex/defaults.css</library.defaults.css>
+    </properties>
+
+    <build>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>${flexmojos.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <incremental>true</incremental>
+                    <headlessServer>true</headlessServer>
+                    <verboseStacktraces>true</verboseStacktraces>
+                    <includeTestFiles>
+                        <includeTestFile>*Test.as</includeTestFile>
+                    </includeTestFiles>
+                    <contextRoot>prime</contextRoot>
+                    <locales>
+                        <locale>en_US</locale>
+                    </locales>
+                    <includeFiles>
+                        <include>${library.design.file}</include>
+                    </includeFiles>
+                    <namespaces>
+                        <namespace>
+                            <uri>${library.namespace.uri}</uri>
+                            <manifest>${library.manifest.file}</manifest>
+                        </namespace>
+                    </namespaces>
+                    <includeNamespaces>
+                        <namespace>${library.namespace.uri}</namespace>
+                    </includeNamespaces>
+                    <includeStylesheet>
+                        <stylesheet>
+                            <name>defaults.css</name>
+                            <path>${library.defaults.css}</path>
+                        </stylesheet>
+                    </includeStylesheet>
+                    <defaultsCss>${library.defaults.css}</defaultsCss>
+                    <includeSources>
+                        <param>src/main/flex</param>
+                    </includeSources>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>compiler</artifactId>
+                        <version>${flex.sdk.version}</version>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>${flexmojos.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>asdoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>${flexunit.version}</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <repositories>
+
+
+        <repository>
+            <id>flex-mojos-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>flex-mojos-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+
+
+    </pluginRepositories>
+
+</project>

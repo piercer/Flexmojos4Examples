@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<componentPackage>
+    <component id="Component2" class="com.dz015.example.Component2"/>
+</componentPackage>
